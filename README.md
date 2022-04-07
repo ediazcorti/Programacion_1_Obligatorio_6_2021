@@ -1,5 +1,5 @@
 # Programacion_1_Obligatorio_6_2021
-One Page App - Repositorio de respaldo del proyecto realizado por Emanuel Díaz, Marcos Medina y Cristian Poggi (https://github.com/cristitan/P1_Obligatorio)
+One Page App - Repositorio de respaldo del proyecto
 
 Front end single-page application, designed to work as a study platfornm app for music teachers and students, in which professors can have distinct study groups assigned for diverse levels with every student assigned to one teacher, group and level. In this platform, each user has access to assessments, corrections, uploading their homework and checking on what has been done to the moment. This only presents features made on the front-end, no database has been used for this app. 
 
