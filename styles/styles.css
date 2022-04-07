@@ -1,0 +1,113 @@
+.roundedBorders {
+  border-radius: 15px;
+}
+.roundedBorders2 {
+  border-radius: 8px;
+}
+.toast {
+  position: fixed;
+  top: auto !important;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgb(216, 218, 230);
+  color: rgba(10, 0, 0, 0.7);
+  height: 40px;
+  border-radius: 10px;
+}
+.toast_error {
+  box-shadow: 0px 2px 5px 2px lightcoral;
+}
+.toast_alert {
+  box-shadow: 0px 2px 5px 2px #fbc02d;
+}
+.toast_success {
+  box-shadow: 0px 2px 5px 2px #43a047;
+}
+section {
+  transition: 0.2s ease;
+}
+.hidden {
+  opacity: 0;
+  transform: translateY(-100%) translateX(-100%);
+  position: absolute;
+}
+.tabs .tab a {
+  color: #536dfe;
+}
+
+.tabs .tab a:hover {
+  color: #536dfe;
+  background-color: rgba(140, 158, 255, 0.1);
+}
+
+.tabs .tab a.active {
+  color: #536dfe;
+  background-color: rgba(140, 158, 255, 0.3);
+}
+.tabs .tab a:focus.active {
+  color: #536dfe;
+  background-color: rgba(140, 158, 255, 0.1);
+}
+
+.tabs .indicator {
+  background-color: #536dfe;
+}
+/* label focus color */
+.input-field > label {
+  color: #536dfe;
+}
+.input-field input:focus + label {
+  color: #536dfe !important;
+}
+.input-field > input:focus {
+  border-bottom: 1px solid rgba(140, 158, 255, 1) !important;
+  box-shadow: 0px 2px 2px;
+}
+.input-field > input {
+  border-bottom: 1px solid rgba(140, 158, 255, 1) !important;
+  box-shadow: none !important;
+}
+div.select-wrapper li span {
+  color: #536dfe;
+}
+div.select-wrapper input.select-dropdown.dropdown-trigger {
+  border-bottom: 1px solid rgba(140, 158, 255, 1) !important;
+  box-shadow: none !important;
+}
+.ghostBtn {
+  background-color: transparent;
+  color: #5770ff;
+  border: 2px solid #8a9bff;
+}
+.ghostBtn:hover {
+  background-color: rgba(140, 158, 255, 0.32);
+}
+.circleNumber_DashboardAlumno {
+  font-size: 30px;
+  border-radius: 1000px;
+  border: 3px solid rgba(140, 158, 255, 1);
+  width: 50px;
+  height: 50px;
+  padding: 50px;
+  margin: 0;
+}
+.deliveredExersicesNumber {
+  font-size: 30px;
+  border-radius: 1000px;
+  border: 3px solid rgba(140, 158, 255, 1);
+  width: 50px;
+  height: 50px;
+  padding: 50px;
+}
+.centeredFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reporteIndividual_label{
+  text-align: end;
+  font-size: 18px;
+}
+.reporteIndividual_data{
+  font-size: 17px;
+}

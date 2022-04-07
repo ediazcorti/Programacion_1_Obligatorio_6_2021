@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title> <!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body class="blue-grey lighten-4" id="root">
+	<nav>
+		<div class="nav-wrapper indigo accent-1">
+			<a href="./index.html" class="brand-logo"> GuitarApp</a>
+			<a id="navMenu" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul id="vistaPublico" class="right hide-on-med-and-down navItem">
+				<li>
+					<button id="navBtn_Registro" class="waves-effect waves-light btn col s4 offset-s3 ghostBtn indigo-text text-lighten-5 roundedBorders2">
+						Regitrarse
+					</button>
+				</li><!--SEGUIR ACÁ-->
+				<li style="margin-left: 20px;margin-right: 10px;">
+					<button id="navBtn_Login" class="waves-effect  waves-light btn col s4 offset-s3 indigo lighten-5 indigo-text text-lighten-2 roundedBorders2">
+						Iniciar Sesión
+					</button>
+				</li>
+			</ul>
+			<ul id="usuarioConocido" class="right hide-on-med-and-down navItem">
+				<li>
+					<span class="col s4 offset-s3" id="bienvenidoUser">
+					</span>
+				</li>
+				<li style="margin-left: 20px;margin-right: 10px;">
+					<button class="waves-effect waves-light btn col s4 offset-s3 ghostBtn indigo-text text-lighten-5 roundedBorders2" id="btnCerrarSesion">Cerrar Sesión
+					</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="sass.html">Registrarse</a></li>
+		<li><a href="badges.html">Iniciar Sessión</a></li>
+	</ul>
+	<main>
+
+		<section id="registro">
+			<div class="row">
+				<div class="col s12 row">
+					<div class="col s1"></div>
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						<i class="small material-icons" style="font-size: 45px;
+						vertical-align: bottom;">account_circle</i>
+						Resgistrarse como:
+					</h3>
+				</div>
+				<!-- <div class="col s12 row">
+					<div class="col s1"></div>
+					<div class="divider col s6 indigo accent-1"></div>
+				</div> -->
+			</div>
+		
+			<div class="row container s12">
+				<ul id="tabMenuRegistro" class="row tabs container s6 white roundedBorders2">
+					<li class="tab col s6 m3"><a href="#alumnoForm">Alumno</a></li>
+					<li class="tab col s6 m3"><a class="active" href="#docenteForm">Docente</a></li>
+				</ul>
+				<div class="tabs-content carousel carousel-slider" style="height: 600px; margin-top: 30px;">
+					<div id="alumnoForm">
+						<form class="col s12" id="alumnoForm">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="alumno_first_name" type="text" class="validate">
+									<label for="alumno_first_name">Nombre de Alumno</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="alumno_user_name" type="text" class="validate">
+									<label for="alumno_user_name">Usuario de Alumno</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12" id="test" style="transition: 0.3s ease;">
+									<input id="alumno_password" type="password" class="validate">
+									<label for="alumno_password">Contraseña</label>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="input-field col s12">
+									<select id="docente_asignado">				
+									</select>
+									<label>Seleccione Docente</label>
+								  </div>
+							</div>
+					
+							<div class="row">
+		
+								<button id="btnRegistro_alumno" class="waves-effect waves-light btn col s4 offset-s8 indigo accent-1 roundedBorders2"><i class="material-icons right">send</i>Registrarse</button>
+								
+							</div>
+						</form>
+					</div>
+					<div id="docenteForm">
+						<form class="col s12" ><!--id="docenteForm"-->
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="docente_first_name" type="text" class="validate">
+									<label for="docente_first_name">Nombre de Docente</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="docente_user_name" type="text" class="validate">
+									<label for="docente_user_name">Usuario de Docente</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12" id="test" style="transition: 0.3s ease;">
+									<input id="docente_password" type="password" class="validate">
+									<label for="docente_password">Contraseña</label>
+								</div>
+							</div>
+							<div class="row">
+								<button id="btnRegistrarDocente" class="waves-effect waves-light btn col s4 offset-s8 indigo accent-1 roundedBorders2"><i class="material-icons right">send</i>Registrarse</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section id="login">
+			<div class="row">
+				<div class="col s12 row">
+					<div class="col s1"></div>
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						<i class="small material-icons" style="font-size: 45px;
+						vertical-align: bottom;">account_circle</i>
+						Acceder como:
+					</h3>
+				</div>
+				<!-- <div class="col s12 row">
+					<div class="col s1"></div>
+					<div class="divider col s6 indigo accent-1"></div>
+				</div> -->
+			</div>
+		
+			<div class="row container s12">
+				<ul id="tabMenuLogin" class="row tabs container s6 white roundedBorders2">
+					<li class="tab col s6 m3"><a class="active" href="#alumnoFormm">Alumno</a></li>
+					<li class="tab col s6 m3"><a  href="#docenteFormm">Docente</a></li>
+				</ul>
+				<div class="tabs-content carousel carousel-slider" style="height: 600px; margin-top: 30px;">
+					<div id="alumnoFormm">
+						<form class="col s12" id="login_alumnoLogin">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="login_alumno_usuario" type="text" class="validate">
+									<label for="login_alumno_usuario">Usuario de Alumno</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12" style="transition: 0.3s ease;">
+									<input id="login_alumno_password" type="password" class="validate">
+									<label for="login_alumno_password">Contraseña</label>
+								</div>
+							</div>
+							<div class="row">
+								<button id="btnIrRegistro_alumno" class="waves-effect waves-light btn col s4 offset-s3 ghostBtn roundedBorders2">Registrarse</button>	
+								<button  id="btnLogin_alumno" class="waves-effect waves-light btn col s4 offset-s1 indigo accent-1 roundedBorders2"><i class="material-icons right">send</i>Acceder</button>
+							</div>
+							
+						</form>
+					</div>
+					<div id="docenteFormm">
+						<form class="col s12" id="login_docenteForm">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="login_docente_usuario" type="text" class="validate" minlength="6" required="true">
+									<label for="login_docente_usuario">Usuario de Docente</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12" id="test" style="transition: 0.3s ease;">
+									<input id="login_docente_password" type="password" class="validate">
+									<label for="login_docente_password">Contraseña</label>
+								</div>
+							</div>
+							<div class="row">
+								<button id="btnIrRegistro_docente" class="waves-effect waves-light btn col s4 offset-s3 ghostBtn roundedBorders2">Registrarse</button>	
+								<button id="btnLogin_docente" class="waves-effect waves-light btn col s4 offset-s1 indigo accent-1 roundedBorders2"><i class="material-icons right">send</i>Acceder</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- ALUMNO -->
+		<section id="dashboardAlumno">
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Dashboard > Alumno
+					</h3>
+				</div>
+			</div>
+			<div class="row" style="margin: auto 10px;">
+				
+				<!--Parte de estadísticas-->
+				<div class="row col s12 l10 offset-l1">
+					<div class="row">
+							<h5 class="col s12 l8 indigo-text text-accent-1">
+								Estadísticas
+							</h5>
+					</div>
+					<div class="row white roundedBorders">
+						<div class="col s3">
+							<div class="col s12 row">
+								<h6 class="col s12 l8 ">
+									<b>Total</b>
+								</h6>
+							</div>
+							<div class="row">
+								<span class="col s5 " style="text-align: right;">Ejercicios Resueltos</span>
+								<b class="col s4 offset-s1 indigo-text text-accent-2" id="dashboardAlumno_ejerciciosResueltos">45%</b>
+							</div>
+							<div class="row">
+								<span class="col s5 " style="text-align: right;">Promedio</span>
+								<b class="col s4 offset-s1 indigo-text text-accent-2" id="dashboardAlumno_promedio">81</b>
+							</div>
+							<div class="row">
+								<span class="col s5 " style="text-align: right;">Pendientes</span>
+								<b class="col s4 offset-s1 indigo-text text-accent-2" id="dashboardAlumno_pendientes">2</b>
+							</div>
+						</div>
+						<div class="col s3">
+								<div class="col s12 row">
+									<h6 class="col s12 l8">
+										<b>Tareas Realizadas</b>
+									</h6>
+								</div>
+							<div class="row col s12 ">
+								<div class="row col s4 offset-s4 indigo-text text-accent-2 centeredFlex">
+									<p class="circleNumber_DashboardAlumno centeredFlex" id="dashboardAlumno_tareasRealizadas"></p>
+								</div>
+							</div>
+						</div>
+						<div class="col s3 ">
+								<div class="col s12 row">
+									<h6 class="col s12 l8">
+										<b>Entregas Corregidas</b>
+									</h6>
+								</div>
+							<div class="row col s12 ">
+								<div class="row col s4 offset-s4 indigo-text text-accent-2 centeredFlex">
+									<p class="circleNumber_DashboardAlumno centeredFlex" id="dashboardAlumno_entregasCorregidas">5</p>
+								</div>
+							</div>
+						</div>
+						<div class="col s3 ">
+								<div class="col s12 row">
+									<h6 class="col s12 l8">
+										<b>Tareas Totales</b>
+									</h6>
+								</div>
+							<div class="row col s12 ">
+								<div class="row col s4 offset-s4 indigo-text text-accent-2 centeredFlex">
+									<p class="circleNumber_DashboardAlumno centeredFlex" id="dashboardAlumno_tareasTotales"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div id="modalRealizarEntrega" class="modal" >
+					<div class="modal-content">
+						<h4>Realizar Entrega</h4>
+						<div class="row">
+							<div class="input-field col s12">
+								<select id="nivelDeTarea">
+									<option value="" disabled selected>Seleccione Nivel</option>
+									<option value="inicial">Inicial</option>		
+									<option value="intermedio">Intermedio</option>		
+									<option value="avanzado">Avanzado</option>		
+								</select>
+								<label>Nivel</label>
+							</div>
+						</div>
+						<h4 id="tituloTarea">Título de la tarea </h4>
+						<p id="idTareaActual">Id de la tarea</p>
+						<img id="imgTareaMostrar">
+						<p id="descripcionTareaMostrar"></p>
+					</div>
+					<div class="modal-footer">
+						<button id="entregarTareaSubmit" class="waves-effect waves-light btn col s2 offset-s10 indigo-text text-lighten-5 indigo accent-1 roundedBorders2">
+							Entregar
+						</button>
+					</div>
+				</div> -->
+				<!--Parte de Tareas-->
+				<div class="row col s12 l10 offset-l1">
+					<div class="row">
+						<h5 class="col s12 l8 indigo-text text-accent-1">
+							Tareas
+						</h5>
+					</div>
+					<div class="row" style="margin: auto 20px;">
+						<div class="col s12">
+							<div class="row s12">
+								<ul id="tabTareasAlumno" class="col s12 row tabs white roundedBorders2">
+									<li class="tab col s2"><a class="active" href="#tareasTodo">Todo</a></li>
+									<li class="tab col s2"><a  href="#tareasPendientes">Pendientes</a></li>
+									<li class="tab col s2"><a  href="#tareasRealizadas">Realizadas</a></li>
+								</ul>
+							</div>
+							<div class="row s12 white roundedBorders z-depth-3">
+								<div class="row col s11 offset-s1">
+										<form class="col s12">
+											<div class="input-field col s6 offset-s6">
+											  <i class="material-icons prefix">search</i>
+											  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+											  <label for="icon_prefix2">buscar</label>
+											</div>
+										</form>
+								</div>
+								<div class="tabs-content carousel carousel-slider" style="height: 600px; margin-top: 30px;" id="tareasContenedor">
+									<div id="tareasTodo" class="col s12 row">
+										<ul class=" flow-text " style="font-size: 18px;">
+											
+											<li>
+												<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+													  
+													<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+														account_circle
+													</i>
+													<div class="col s8" style="height: 55px;">
+														<span class="col s12">Titulo de tarea 1</span>
+														<span class="col s12" style="font-size: 16px;">Descripción larga de tarea mucho textooo xDD</span>
+													</div>
+													<div class="col s3 centeredFlex" style="height: 55px;" >
+															
+														<button  id="btnDocenteIrReporteIndividual" class="waves-effect waves-light btn col s5 ghostBtn roundedBorders2">
+															Ver Mas
+														</button>
+														<button
+														class="waves-effect waves-light btn col s5 offset-s1 indigo accent-1 roundedBorders2" 
+														>Entregar</button>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+													  
+													<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+														account_circle
+													</i>
+													<div class="col s8" style="height: 55px;">
+														<span class="col s12">Titulo de tarea 1</span>
+														<span class="col s12" style="font-size: 16px;">Descripción larga de tarea mucho textooo xDD</span>
+													</div>
+													<div class="col s3 centeredFlex" style="height: 55px;" >
+															
+														<button  id="btnDocenteIrReporteIndividual" class="waves-effect waves-light btn col s5 ghostBtn roundedBorders2">
+															Ver Mas
+														</button>
+														<button
+														class="waves-effect waves-light btn col s5 offset-s1 indigo accent-1 roundedBorders2" 
+														>Entregar</button>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div id="tareasPendientes" class="col s12 row">
+										<ul class=" flow-text " style="font-size: 18px;">
+											<li>
+												<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+													  
+													<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+														account_circle
+													</i>
+													<div class="col s4" style="height: 55px;">
+														<span class="col s12">Nombre Completo</span>
+														<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+													</div>
+													<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+														<span class="col s12">
+															Entregas Realizadas: <b>7</b>
+														</span>
+													</div>
+													<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+														<button
+														class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+														>Ver Perfil</button>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+													  
+													<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+														account_circle
+													</i>
+													<div class="col s4" style="height: 55px;">
+														<span class="col s12">Nombre Completo</span>
+														<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+													</div>
+													<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+														<span class="col s12">
+															Entregas Realizadas: <b>7</b>
+														</span>
+													</div>
+													<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+														<button
+														class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+														>Ver Perfil</button>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div id="tareasRealizadas" class="col s12 row">
+										<ul class=" flow-text " style="font-size: 18px;">
+											<li>
+												<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+													  
+													<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+														account_circle
+													</i>
+													<div class="col s4" style="height: 55px;">
+														<span class="col s12">Nombre Completo</span>
+														<span class="col s12" style="font-size: 12px;">Nivel Intermedio</span>
+													</div>
+													<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+														<span class="col s12">
+															Entregas Realizadas: <b>7</b>
+														</span>
+													</div>
+													<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+														<button
+														class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+														>Ver Perfil</button>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id= "entregarTarea"> 
+ 
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Realizar entrega > Alumno
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 row">
+					<button class="volverDashboardAlumno waves-effect waves-light btn col s6 offset-s6 l2 offset-l10 indigo-text text-accent-2 roundedBorders2 ghostBtn">
+						Volver
+						<i class="material-icons left">arrow_back</i>
+					</button>
+				</div>
+			</div>
+			<div class="row" style="margin: auto 10px;">
+				<h4 id="tituloTarea">Título de la tarea </h4>
+				<span id="idTareaActual" style="display: none;">Id de la tarea</span>
+				<img id="imgTareaMostrar">
+				<p id="descripcionTareaMostrar"></p>
+		   
+				<h2>Entregar Tarea</h2>
+				<button id="btnVolverADashboard">Volver</button>
+				<div>
+					<br>
+					<div id="adjuntarArchivo">
+						<br>
+						<br>
+						<h3>Adjuntar archivo</h3>
+						<br>
+						<img src="/assets/imgs/subirEntrega.png" style="width: 20px;"alt="subir" >
+						<div class="row">
+							<div class="input-field col s12">
+								<select id="entregarTareaSubirAudio">
+									<option value="" disabled selected>Seleccione Audio</option>
+									<option value="assets/imgs/ej1.m4a" >
+										Audio Ejercicio1
+									</option>
+									<option value="assets/imgs/ej2.m4a">Audio Ejercicio2</option>
+									<option value="assets/imgs/ej3.m4a" >Audio Ejercicio3</option>
+									<option value="assets/imgs/ej4.m4a">Audio Ejercicio4</option>
+									<option value="assets/imgs/ej5.m4a">Audio Ejercicio5</option>
+									<option value="assets/imgs/ej6.m4a" >Audio Ejercicio6</option>
+									<option value="assets/imgs/ej7.m4a">Audio Ejercicio7</option>
+									<option value="assets/imgs/ej8.m4a">Audio Ejercicio8</option>
+									<option value="assets/imgs/ej9.m4a">Audio Ejercicio9</option>
+								</select>
+								<label>Audio</label>
+							  </div>
+						</div>
+						<br>
+						<br>
+					</div>
+					<div id="entregarTareaComentarioDiv">
+						<label>Comentario</label>
+						<textarea id="entregarTareaComentario" cols="60" rows="20"></textarea>
+					</div>
+					<br>
+					<br>
+					<button id="btnEnviarEntrega" style="display: flex; align-self: flex-end;">Enviar tarea</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- DOCENTE -->
+		<section id="dashboardDocente">
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Dashboard > Docente
+					</h3>
+				</div>
+			</div>
+			<div class="row" style="margin: auto 10px;">
+				<div class="col s12 l6 offset-l1 col ">
+					<div class="row s12">
+						<span class="col s2 flow-text indigo-text text-accent-1" style="padding: 5px 0px;">Alumnos:</span>
+						<ul id="tabDashboardDocente" class="col s10 row tabs white roundedBorders2">
+							<li class="tab col s2"><a class="active" href="#alumnosTodos">Todos</a></li>
+							<li class="tab col s2"><a  href="#alumnosInicial">Inicial</a></li>
+							<li class="tab col s2"><a  href="#alumnosIntermedio">Intermedio</a></li>
+							<li class="tab col s2"><a  href="#alumnosAvanzado">Avanzado</a></li>
+						</ul>
+					</div>
+					<div class="row s12">
+						<div id="contenedorListaAlumnos" class="tabs-content carousel carousel-slider white roundedBorders z-depth-3" style="height: 600px; margin-top: 30px;">
+							<div id="alumnosTodos" class="col s12 row">
+								<ul class=" flow-text " style="font-size: 18px;">
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Intermedio</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Avanzado</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div id="alumnosInicial" class="col s12 row">
+								<ul class=" flow-text " style="font-size: 18px;">
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Inicial</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div id="alumnosIntermedio" class="col s12 row">
+								<ul class=" flow-text " style="font-size: 18px;">
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Intermedio</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div id="alumnosAvanzado" class="col s12 row">
+								<ul class=" flow-text " style="font-size: 18px;">
+									<li>
+										<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+      										
+											<i class="col s1 small material-icons indigo-text text-accent-1 centeredFlex" style="font-size: 45px; vertical-align: bottom; height: 55px;">
+												account_circle
+											</i>
+											<div class="col s4" style="height: 55px;">
+												<span class="col s12">Nombre Completo</span>
+												<span class="col s12" style="font-size: 12px;">Nivel Avanzado</span>
+											</div>
+											<div class="col s4 indigo-text text-accent-2 centeredFlex" style="height: 55px;">
+												<span class="col s12">
+													Entregas Realizadas: <b>7</b>
+												</span>
+											</div>
+											<div class="col s2 offset-s1  centeredFlex" style="height: 55px;" >
+												<button
+												class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+												>Ver Perfil</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l3 offset-l1">
+					<button id="btnDocenteIrTareas" class="waves-effect waves-light btn row col s12 indigo accent-1 roundedBorders2" style="height: 80px;">
+						Tareas
+						<i class="material-icons right">send</i>
+					</button>	
+					<button  id="btnDocenteIrReporteIndividual" class="waves-effect waves-light btn row col s12 ghostBtn roundedBorders2" style="height: 80px;">
+						Reporte Individual
+					</button>
+					<div class="row col s12 white roundedBorders2" id="deliveredExersicesNumber">
+						<h6 class="row col s12">Ejercicios entregados para tí:</h6>
+						<div class="row col s4 offset-s4 indigo-text text-accent-2 centeredFlex">
+							<p class="deliveredExersicesNumber centeredFlex">56</p>
+						</div>
+					</div>
+					<div class="row col s12 white roundedBorders2">
+						<h6 class="row col s12">Top entrega de ejercicios:</h6>
+						
+						<div id="alumnosTopEntregas" class="col s12 row">
+							<ul class=" flow-text " style="font-size: 18px;">
+								
+								<li>
+									<div class="col s12 row indigo lighten-5 roundedBorders2">
+										<span
+											class="col s8 indigo lighten-5 roundedBorders2"
+										>Nombre Alumno2</span>
+										<span
+										class="col s1 offset-s3 indigo-text text-accent-1" style="font-weight: bold;"
+										>10</span>
+									</div>
+								</li>
+								<li>
+									<div class="col s12 row indigo lighten-5 roundedBorders2">
+										<span
+											class="col s8 indigo lighten-5 roundedBorders2"
+										>Nombre Alumno3</span>
+										<span
+										class="col s1 offset-s3 indigo-text text-accent-1" style="font-weight: bold;"
+										>10</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="tareasDocente">
+			<div class="row" style="margin-top: 20px;">
+				<div class="col s12 row">
+					<button class="volverDashboardDocente waves-effect waves-light btn col s6 l1 indigo-text text-accent-2 roundedBorders2 ghostBtn">
+						Volver
+						<i class="material-icons left">arrow_back</i>
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Tareas > Docente
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+
+				<div id="modalCrearTarea" class="modal" >
+					<div class="modal-content">
+						<h4>Crear Tarea</h4>
+						<label>
+							Titulo
+							<input type="text" id="tituloTarea"/>
+						</label>
+						<label>
+							Descripción
+							<textarea name="descripcion" cols="30" rows="10" id="descripcionTarea"></textarea>
+						</label>
+						<div class="row">
+							<div class="input-field col s12">
+								<select id="nivelDeTarea">
+									<option value="" disabled selected>Seleccione Nivel</option>
+									<option value="inicial">Inicial</option>		
+									<option value="intermedio">Intermedio</option>		
+									<option value="avanzado">Avanzado</option>		
+								</select>
+								<label>Nivel</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<select id="imgSelect" class="icons">
+									<option value="" disabled selected>Seleccione Imagen</option>
+									<option value="assets/imgs/ej1.png" data-icon="assets/imgs/ej1.png">
+										Imagen Ejercicio1
+									</option>
+									<option value="assets/imgs/ej2.png" data-icon="assets/imgs/ej2.png">Imagen Ejercicio2</option>
+									<option value="assets/imgs/ej3.png" data-icon="assets/imgs/ej3.png" >Imagen Ejercicio3</option>
+									<option value="assets/imgs/ej4.png" data-icon="assets/imgs/ej4.png">Imagen Ejercicio4</option>
+									<option value="assets/imgs/ej5.png" data-icon="assets/imgs/ej5.png">Imagen Ejercicio5</option>
+									<option value="assets/imgs/ej6.png" data-icon="assets/imgs/ej6.png">Imagen Ejercicio6</option>
+									<option value="assets/imgs/ej7.png" data-icon="assets/imgs/ej7.png">Imagen Ejercicio7</option>
+									<option value="assets/imgs/ej8.png" data-icon="assets/imgs/ej7.png">Imagen Ejercicio8</option>
+									<option value="assets/imgs/ej9.png" data-icon="assets/imgs/ej7.png">Imagen Ejercicio9</option>
+								</select>
+								<label>Imagen</label>
+							  </div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="crearTareaSubmit" class="waves-effect waves-light btn col s2 offset-s10 indigo-text text-lighten-5 indigo accent-1 roundedBorders2">
+							Crear
+						</button>
+					</div>
+				</div>
+				
+				<div class="col s10 offset-s1">
+					<div class="row">
+						<button id="crearTareaBtn" class="waves-effect waves-light btn col s2 offset-s10 indigo-text text-lighten-5 indigo accent-1 roundedBorders2">
+							Crear Tarea
+							<i class="material-icons right">add</i>
+						</button>
+					</div>
+					<div class="col s10 offset-s1">
+						<ul class="collapsible popout" id="tareasPlanteadasList">
+							<li>
+								<div class="collapsible-header">
+									<div class="col s6 centeredFlex" style="height: 55px;">
+										<span class="col s12 indigo-text text-accent-2">
+											Titulo
+										</span>
+									</div>
+									<div class="col s3 centeredFlex" style="height: 55px;">
+										<span class="col s12">
+											Nivel: <b class="indigo-text text-accent-1">Intermedio</b>
+										</span>
+									</div>
+									<div class="col s3 centeredFlex" style="height: 55px;">
+										<span class="col s12">
+											Entregas: <b class="indigo-text text-accent-1">4</b>
+										</span>
+									</div>
+								</div>
+								<div class="collapsible-body row transparent">
+									<ul class=" flow-text " style="font-size: 18px;">
+										<li>
+											<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+												<div class="col s6 centeredFlex" style="height: 55px;">
+													<span class="col s12">
+														Nombre: <b class="indigo-text text-accent-1">Arieal</b>
+													</span>
+												</div>
+												<div class="col s4 offset-s2  centeredFlex" style="height: 55px;" >
+													<button
+													class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+													>Corregir</button>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="col s12 row indigo lighten-5 roundedBorders2" style="padding: 6px;">
+												<div class="col s6 centeredFlex" style="height: 55px;">
+													<span class="col s12">
+														Nombre: <b class="indigo-text text-accent-1">Arieal</b>
+													</span>
+												</div>
+												<div class="col s4 offset-s2  centeredFlex" style="height: 55px;" >
+													<button
+													class="waves-effect waves-light btn col s12 indigo accent-1 roundedBorders2" 
+													>Corregir</button>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+							</li>
+							<li>
+								<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+
+		</section>
+
+		<section id="reporteIndividualDocente">
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Reporte Individual de Alumno
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 row">
+					<button class="volverDashboardDocente waves-effect waves-light btn col s6 offset-s6 l2 offset-l10 indigo-text text-accent-2 roundedBorders2 ghostBtn">
+						Volver
+						<i class="material-icons left">arrow_back</i>
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row col s12 l10 offset-l1">
+					<div class="row col s12 l5">
+						<div class="input-field col s12">
+							<select id="alumnosAsignados">
+											
+							</select>
+							<label>Seleccione Alumno</label>
+						</div>
+
+					</div>
+					<div class="col s12 l6 offset-l1 white roundedBorders2 z-depth-3">
+						<div class="input-field col s12">
+							<span class="col s4 reporteIndividual_label flow-text indigo-text text-accent-2">Nombre:</span>
+							<span class="col s6 flow-text reporteIndividual_data" id="reporteIndividual_nombre">Santiago</span>
+						</div>
+						<div class="input-field col s12">
+							<span class="col s4 reporteIndividual_label flow-text indigo-text text-accent-2">Nivel:</span>
+							<div class="input-field col s6 flow-text reporteIndividual_data">
+								<select  id="reporteIndividual_nivel" class="col s6 flow-text reporteIndividual_data">
+								</select>
+							</div>
+						</div>
+						<div class="input-field col s12">
+							<span class="col s4 reporteIndividual_label flow-text indigo-text text-accent-2">Ejercicios Planteados:</span>
+							<b class="col s6 flow-text reporteIndividual_data" id="reporteIndividual_tareasPlanteadas">7</b>
+						</div>
+						<div class="input-field col s12">
+							<span class="col s4 reporteIndividual_label flow-text indigo-text text-accent-2">Ejercicios Resueltos:</span>
+							<b class="col s6 flow-text reporteIndividual_data" id="reporteIndividual_tareasEntregadas"></b>
+						</div>
+						<div class="input-field col s12">
+							<button class="waves-effect waves-light btn row col s12 offset-l4 l4 indigo accent-1 roundedBorders2" id="cambiarNivel" >
+								Cambiar Nivel
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id= "crearDevolucion"> 
+			<div class="row">
+				<div class="col s12 row">
+					<h3 class="col s12 l8 indigo-text text-accent-1">
+						Correccion de Entrega
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 row">
+					<button class="volverDashboardDocente waves-effect waves-light btn col s6 offset-s6 l2 offset-l10 indigo-text text-accent-2 roundedBorders2 ghostBtn">
+						Volver
+						<i class="material-icons left">arrow_back</i>
+					</button>
+				</div>
+			</div>
+			<div class="row" style="margin: auto 10px;">
+			
+				<h4 id="tituloTareaACorregir">Título de la tarea</h4>
+			
+				<span id="idTareaACorregir" style="display: none;">Id de la tarea</span>
+					
+				<h4>Alumno:</h4>
+				<span id="nombreAlumnoACorregir"></span>
+			
+				<span id="usuarioAlumnoACorregir" style="display: none;"></span>
+					
+				<h4>Nivel</h4>
+				<span id="nivelAlumnoACorregir"></span>
+							
+				<h4>Comentario del Alumno:</h4>
+				<span id="comentarioAlumnoACorregir"></span>
+			   <!--  <audio id="audioEntregaMostrar"> -->
+				   <audio id="audioEntregaACorregir"
+				   src="" controls></audio>
+			   
+				   <br>
+			
+				<h4>Puntaje</h4>
+				<input type="text" id="puntajeDevolucion">
+				<br>
+				<h4>Comentario</h4>
+				<textarea name="" id="comentarioDevolucion" cols="25" rows="15"></textarea>
+				<button id="btnEnviarDevolucion">Enviar Devolución</button>
+			
+			
+			
+			</section>
+			
+		<!--Error-->
+		
+		<section id="pantallaError">
+			<h1>Ups! Algo salió mal :(</h1>
+		</section>
+	</main>
+			<!-- <button class="btn waves-effect waves-light col s2 offset-s10" name="action" onClick="()=>{document.getElementById('test').classList.add('myClass_show')}">Submit
+				<i class="material-icons right">send</i>
+			</button> -->
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="./js/db.js"></script><!-- SCRIPT QUE SE ENCARGA DE GUARDAR A LOS DATOS-->
+	<script src="./js/cambioVista.js"></script> <!-- SCRIPT QUE SE ENCARGA DE MOSTRAR/OCULtAR LAS VISTAS -->
+	<script src="./js/main.js"></script>
+
+</body>
+
+</html>
